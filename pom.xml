@@ -5,7 +5,7 @@
   <artifactId>com.qixin.example</artifactId>
   <packaging>war</packaging>
   <version>1.0</version>
-  <name>com.qixin.example Maven Webapp</name>
+  <name>Shiro</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -15,6 +15,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
   <build>
     <finalName>com.qixin.example</finalName>
   </build>
