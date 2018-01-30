@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qixin.example.mapper.SystemOrganizationMapper">
+
+    <resultMap type="SystemOrganization" id="BaseResult">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="parentIds" column="parent_ids"/>
+        <result property="available" column="available"/>
+    </resultMap>
+    <sql id="Base_Column_List" >
+        id, name, parent_id, parent_ids, available
+    </sql>
+    <sql id="Base_Column">
+        <trim suffix="" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="name != null">name,</if>
+            <if test="parentId != null">parent_id,</if>
+            <if test="parentIds != null">parent_ids,</if>
+            <if test="available != null">available,</if>
+        </trim>
+    </sql>
+    <sql id="Base_Value">
+        <trim suffix="" suffixOverrides=",">
+            <if test="id != null">${id},</if>
+            <if test="name != null">#{name},</if>
+            <if test="parentId != null">#{parentId},</if>
+            <if test="parentIds != null">#{parentIds},</if>
+            <if test="available != null">#{available},</if>
+        </trim>
+    </sql>
+
+    <select id="findById" resultMap="BaseResult">
+        SELECT <include refid="Base_Column_List" /> FROM system_organization WHERE id=${id}
+    </select>
+    <select id="findAll" resultMap="BaseResult">
+        SELECT <include refid="Base_Column_List" /> FROM system_organization
+    </select>
+</mapper>

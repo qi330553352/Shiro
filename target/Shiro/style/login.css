@@ -1,0 +1,104 @@
+html{
+    height: 100%;
+}
+.sign-in{
+    background: url("../images/login_bg.jpg") center bottom no-repeat;
+    background-size: 100% 100%;
+}
+.login_wrapper{
+    width: 418px;
+    position: fixed;
+    bottom: 31%;
+    right: 12%;
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+@media screen and (min-width: 1601px) and (max-width:1920px) {
+    .login_wrapper{
+        right: 23%;
+    }
+}
+@media screen and (min-width: 1367px) and (max-width: 1600px){
+    .login_wrapper{
+        right: 17%;
+    }
+}
+.login_wrapper .title {
+    height: 55px;
+    line-height: 55px;
+    padding:0;
+    letter-spacing: 8.5px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 22px;
+    color: #fff;
+    font-family: "Microsoft Yahei";
+    background-color: #ddb47b;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin:0;
+}
+.login_wrapper form {
+    padding: 30px 50px;
+    background-color: #ECFFFF;
+}
+.login_wrapper .input-wrapper{
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.login_wrapper .input-wrapper i{
+    position: absolute;
+    left: 20px;
+    top: 8px;
+    color: #e5e5e5;
+    text-align: center;
+    border-right: 1px solid #e5e5e5;
+    padding-right: 10px;
+    width: 25px;
+    height: 24px;
+    line-height: 24px;
+}
+.login_wrapper .input-wrapper i.icon-username{
+    background: url("../images/icon-username.png") no-repeat left top;
+}
+.login_wrapper .input-wrapper i.icon-password{
+    background: url("../images/icon-password.png") no-repeat left top;
+}
+.login_wrapper .input-wrapper i.icon-validate{
+    background: url("../images/icon-validate.png") no-repeat left top;
+}
+.login_wrapper .input-wrapper .plc_input{
+    padding: 8px 0 10px 62px;
+    width: 100%;
+    border: 2px solid #cccccc;
+    line-height: 22px;
+    font-size: 16px;
+    color: #19a97b;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.login_wrapper .input-wrapper .plc_input:focus{
+    border-color: #19a97b;
+}
+.login_wrapper .input-wrapper .input-small{
+    width: 90px;
+    background-color: #fff;
+}
+.login_wrapper .btn{
+    height: 50px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #ddb47b;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 7.5px;
+}
+.error-msg{
+    position: relative;
+    top: -10px;
+    left: 2px;
+    font-size: 14px;
+}

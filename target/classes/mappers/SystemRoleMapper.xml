@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qixin.example.mapper.SystemRoleMapper">
+
+    <resultMap type="SystemRole" id="BaseResult">
+        <result property="id" column="id"/>
+        <result property="role" column="role"/>
+        <result property="description" column="description"/>
+        <result property="available" column="available"/>
+        <collection property="resourceIds" javaType="java.util.List" column="resource_ids"/>
+    </resultMap>
+    <sql id="Base_Column_List" >
+        id, role, description, resource_ids, available
+    </sql>
+    <select id="findById" resultMap="BaseResult">
+        SELECT <include refid="Base_Column_List" /> FROM system_role WHERE id=${id}
+    </select>
+    <select id="findRoles" resultType="java.lang.String">
+        SELECT a.`role` FROM system_role a WHERE
+        a.`id` IN <foreach collection="roleIds" index="index" item="item" open="(" separator="," close=")">${item}</foreach>
+    </select>
+    <select id="findAll" resultMap="BaseResult">
+        SELECT <include refid="Base_Column_List" /> FROM system_role
+    </select>
+    <select id="findAllRole" resultType="java.lang.String">
+        SELECT a.`role` FROM system_role a WHERE a.`role` IS NOT NULL AND a.`role` !=''
+    </select>
+</mapper>
